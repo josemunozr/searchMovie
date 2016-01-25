@@ -61,10 +61,17 @@ angular.module('starter.controllers',[])
 	.controller('MovieCtrl', function ($scope, Appservices, $window, $sce) {
 		var movie = JSON.parse($window.localStorage['movie']);
 
+		$scope.linkimdb = movie.urlIMDB;
+
 		$scope.poster = movie.urlPoster;
 		$scope.plot = movie.simplePlot;
 		$scope.persons = movie.actors;
 		$scope.video = $sce.trustAsResourceUrl(movie.trailer);
+
+
+		$scope.forwardIMDb = function (url){
+			$window.location.href = url;
+		}
 	});
 
 })();

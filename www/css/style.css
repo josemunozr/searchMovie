@@ -37,4 +37,5 @@
 	.icon-item .start, .icon-item .heart, .icon-item .forward {
 		float: right;
 		margin: 0 10px;
+        cursor : pointer;
 	}
