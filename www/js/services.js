@@ -41,6 +41,8 @@
 					promesas.push(getUrlPoster(p.actorId));
 				});
 
+				promesas.push(getTrailer(data.idIMDB));
+
 				$q.all(promesas)
 					.then(function (promise) {
 						deferred.resolve(promise);
@@ -49,9 +51,22 @@
 				return deferred.promise;
 			}
 
+			function getTrailer(id_imdb){
+				var deferred = $q.defer();  
+
+				$http.jsonp("http://www.myapifilms.com/tmdb/movieInfoImdb?idIMDB="+ id_imdb +"&token="+ _token +"&format=json&language=en&alternativeTitles=0&casts=0&images=0&keywords=0&releases=0&videos=1&callback=JSON_CALLBACK")
+				  .then(function (data) {
+				    deferred.resolve(data);
+				  })
+				  .catch(function(err){
+				  	console.error(err);
+				  });
+				return deferred.promise;
+			}
+
+
 			return {
 				getMovie : getMovie,
-				getUrlPoster : getUrlPoster,
 				getAllPoster : getAllPoster
 			}
 

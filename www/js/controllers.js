@@ -23,6 +23,7 @@ angular.module('starter.controllers',[])
 			var linkPersons = [];
 			var links = {};
 
+
 			Appservices.getAllPoster(movie)
 				.then(function (data) {
 					data.forEach(function (d,i) {
@@ -30,6 +31,8 @@ angular.module('starter.controllers',[])
 						if(i == 0){
 							linkPoster = link;
 							links.poster = linkPoster
+						}else if(i == data.length-1){
+							$scope.movie.trailer = "https://www.youtube.com/embed/" + d.data.data.videos[0].key;
 						}else{
 							linkPersons.push(link);
 							links.Persons = linkPersons;
@@ -55,13 +58,13 @@ angular.module('starter.controllers',[])
 		
 	})
 
-	.controller('MovieCtrl', function ($scope, Appservices, $window) {
+	.controller('MovieCtrl', function ($scope, Appservices, $window, $sce) {
 		var movie = JSON.parse($window.localStorage['movie']);
 
-		$scope.video = "http://www.youtube.com/embed/dFVxGRekRSg";
 		$scope.poster = movie.urlPoster;
 		$scope.plot = movie.simplePlot;
 		$scope.persons = movie.actors;
+		$scope.video = $sce.trustAsResourceUrl(movie.trailer);
 	});
 
 })();
