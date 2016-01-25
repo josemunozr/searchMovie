@@ -72,6 +72,10 @@ angular.module('starter.controllers',[])
 		$scope.forwardIMDb = function (url){
 			$window.location.href = url;
 		}
+
+		$scope.goSearch = function(){
+			$window.location.href = '#/'
+		}
 	});
 
 })();

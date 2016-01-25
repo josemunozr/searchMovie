@@ -33,7 +33,9 @@
     padding: 0 15px;
     width: 100%;
 }
-
+    .icon-item .arrow{
+        cursor : pointer;
+    }
 	.icon-item .start, .icon-item .heart, .icon-item .forward {
 		float: right;
 		margin: 0 10px;
