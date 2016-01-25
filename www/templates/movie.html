@@ -3,7 +3,7 @@
 			<div class="icon-item">
 				<i class="icon ion-android-arrow-back arrow" ng-click="goSearch()"></i>
 				<i class="icon ion-forward forward" ng-model="linkimdb" ng-click="forwardIMDb(linkimdb)"></i>
-				<i class="icon ion-heart heart"></i>
+				<i class="icon ion-heart heart" ng-model="idimdb" ng-class="{active : toggleActive == true}" ng-click="toggleActiveFavorite(idimdb)"></i>
 				<i class="icon ion-star start"></i>
 			</div>
 			<img ng-src="http://www.myapifilms.com/imdb/image/poster/{{poster}}" alt="" width="100%">
@@ -12,10 +12,10 @@
 			    <p>{{plot}}</p> 
 			  </div>
 			</div>
-			<div class="card margin-horizontal-none margin-vertical-10">
+			<div class="card margin-horizontal-none margin-vertical-10 height-200">
 				<ion-scroll direction="x" >
 					<div class="item">
-					  <img ng-src="http://www.myapifilms.com/imdb/image/poster/{{person.urlPhoto}}" alt="" height="200px" ng-repeat="person in persons">
+					  <img class="margin-horizontal-5"  ng-src="http://www.myapifilms.com/imdb/image/poster/{{person.urlPhoto}}" alt="" height="200px" ng-repeat="person in persons">
 					</div>
 				</ion-scroll>
 			</div>

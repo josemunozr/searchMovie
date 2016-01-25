@@ -20,10 +20,15 @@
 	margin-left: 0;
 	margin-right: 0;
 }
+.margin-horizontal-5{
+    margin-left: 5px;
+    margin-right: 5px;
+}
 .margin-vertical-10{
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
 
 .icon-item{
     position: absolute;
@@ -41,3 +46,11 @@
 		margin: 0 10px;
         cursor : pointer;
 	}
+
+.active{
+    color: #E45B5B;
+}
+
+.height-200{
+    max-height: 200px!important;
+}
