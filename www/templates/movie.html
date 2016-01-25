@@ -15,21 +15,12 @@
 			<div class="card margin-horizontal-none margin-vertical-10">
 				<ion-scroll zooming="false" direction="x" >
 					<div class="item">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
-					  <img src="../img/morfeo.jpg" alt="" height="200px">
+					  <img ng-src="http://www.myapifilms.com/imdb/image/poster/{{person.urlPhoto}}" alt="" height="200px" ng-repeat="person in persons">
 					</div>
 				</ion-scroll>
 			</div>
 			<div class="video-container">
-			         <iframe src="http://www.youtube.com/embed/dFVxGRekRSg" frameborder="0" width="560" height="315"></iframe>
+	         	<iframe src="http://www.youtube.com/embed/dFVxGRekRSg" frameborder="0" width="560" height="315"></iframe>
 			</div>
 		</ion-content>
 </ion-view>

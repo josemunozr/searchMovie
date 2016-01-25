@@ -29,9 +29,30 @@
 				  return deferred.promise;
 			}
 
+			function getAllPoster (data){
+				var deferred = $q.defer();  
+				var promesas = [];
+				
+				// get Poster movie
+				promesas.push(getUrlPoster(data.idIMDB));
+
+				// get Poster persons
+				data.actors.forEach(function (p,i) {
+					promesas.push(getUrlPoster(p.actorId));
+				});
+
+				$q.all(promesas)
+					.then(function (promise) {
+						deferred.resolve(promise);
+					})
+
+				return deferred.promise;
+			}
+
 			return {
 				getMovie : getMovie,
-				getUrlPoster : getUrlPoster
+				getUrlPoster : getUrlPoster,
+				getAllPoster : getAllPoster
 			}
 
 		});
