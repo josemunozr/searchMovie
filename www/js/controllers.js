@@ -2,8 +2,12 @@
 
 angular.module('starter.controllers',[])
 	
-	.controller('AppCtrl', function ($scope) {
-		$scope.title = "Search Movie"
+	.controller('AppCtrl', function ($scope, Appservices) {
+
+		$scope.getMovie = function(title){
+			Appservices.getMovie(title);
+		}
+
 	})
 
 

@@ -3,14 +3,14 @@
 		<h1 class="title">Search Movie</h1>
 	</ion-header-bar>
 	  
-	<ion-content>
+	<ion-content ng-controller="AppCtrl">
 		<div class="list">
 		  <div class="item item-input-inset">
 		    <label class="item-input-wrapper">
-		      <input type="text" placeholder="search">
+		      <input type="text" placeholder="search" ng-model="title">
 		    </label>
-		    <button class="button button-small">
-		      Submit
+		    <button class="button button-small" ng-click="getMovie(title)">
+		      Search
 		    </button>
 		  </div>
 		</div>
