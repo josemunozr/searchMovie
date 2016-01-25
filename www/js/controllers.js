@@ -33,10 +33,10 @@ angular.module('starter.controllers',[])
 	})
 
 	.controller('MovieCtrl', function ($scope, Appservices, $window) {
-		/*console.log(AppCtrl.movie);*/
 		var movie = JSON.parse($window.localStorage['movie']);
 
 		$scope.poster = movie.urlPoster;
+		$scope.plot = movie.simplePlot;
 	});
 
 })();
