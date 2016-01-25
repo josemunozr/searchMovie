@@ -1,12 +1,12 @@
 <ion-view view-title="movie">
-		<ion-content has-subheader="false">
+		<ion-content has-subheader="false" ng-controller="MovieCtrl">
 			<div class="icon-item">
 				<i class="icon ion-android-arrow-back arrow"></i>
 				<i class="icon ion-forward forward"></i>
 				<i class="icon ion-heart heart"></i>
 				<i class="icon ion-star start"></i>
 			</div>
-			<img src="../img/matrix.jpg" alt="" width="100%">
+			<img ng-src="http://www.myapifilms.com/imdb/image/poster/{{poster}}" alt="" width="100%">
 			<div class="card margin-horizontal-none margin-vertical-10">
 			  <div class="item item-text-wrap">
 			    <p>A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.</p> 

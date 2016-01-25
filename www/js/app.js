@@ -36,7 +36,7 @@
       .state('movie', {
         url: '/movie',
         templateUrl : 'templates/movie.html',
-        controller : 'AppCtrl'
+        controller : 'MovieCtrl'
       })
 
     // if none of the above states are matched, use this as the fallback
